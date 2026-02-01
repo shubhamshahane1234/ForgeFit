@@ -1,0 +1,126 @@
+/* ============================================================
+   TRAINERS
+   ============================================================ */
+.trainers {
+  padding: var(--space-2xl) 0;
+  background: var(--clr-bg);
+}
+
+.trainers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ---- Card ---- */
+.trainer-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 20px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-align: center;
+  align-items: center;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+}
+.trainer-card:hover {
+  border-color: rgba(232,255,0,.2);
+  box-shadow: 0 12px 48px rgba(0,0,0,.25);
+  transform: translateY(-4px);
+}
+
+/* avatar */
+.trainer-card__avatar-wrap {
+  position: relative;
+  margin-bottom: var(--space-sm);
+}
+.trainer-card__avatar {
+  --avatar-accent: #e8ff00;
+  width: 100px;
+  height: 100px;
+  background: var(--clr-surface-alt);
+  border: 2px solid var(--avatar-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--avatar-accent);
+  letter-spacing: 0.05em;
+}
+.trainer-card__status {
+  position: absolute;
+  bottom: 4px; right: 4px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 20px;
+  padding: 3px 10px 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--clr-success);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.trainer-card__dot {
+  width: 7px; height: 7px;
+  background: var(--clr-success);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.trainer-card__name {
+  font-size: 1.2rem;
+  color: var(--clr-text);
+}
+.trainer-card__role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  max-width: none;
+}
+.trainer-card__bio {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  max-width: none;
+}
+
+.trainer-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.trainer-card__tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  background: var(--clr-surface-alt);
+  border: 1px solid var(--clr-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.trainer-card__btn {
+  margin-top: var(--space-sm);
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 500px) {
+  .trainers__grid { grid-template-columns: 1fr; }
+}

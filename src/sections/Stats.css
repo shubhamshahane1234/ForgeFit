@@ -1,0 +1,58 @@
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats {
+  padding: var(--space-xl) 0;
+  background: var(--clr-surface-alt);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+/* subtle left accent bar */
+.stats::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--clr-accent);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.stats__number {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--clr-accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stats__label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-top: 10px;
+  max-width: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+@media (max-width: 360px) {
+  .stats__grid { grid-template-columns: 1fr; }
+}
